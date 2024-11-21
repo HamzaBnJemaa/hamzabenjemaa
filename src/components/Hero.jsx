@@ -1,5 +1,6 @@
 import { div } from 'framer-motion/m';
 import image from '../assets/hamza.png';
+import {motion} from 'framer-motion';
 
 const Hero = () => {
   return (
