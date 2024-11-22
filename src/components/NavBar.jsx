@@ -56,7 +56,7 @@ const NavBar = () => {
   <li>Projects</li>
 </a>
 <a href="#contact" className='cursor-pointer opacity-70 transition-all duration-300 hover-opacity-100'>
-  <li>Contact</li>
+  <li>Contact Me</li>
 </a>
 </ul>
 <ul className='flex flex-wrap gap-5'>
