@@ -6,12 +6,12 @@
     scroll-behavior: smooth;
 }
 
-::webkit-scroll{
-    widht: 20px
+::-webkit-scrollbar{
+    width: 20px;
 }
 ::-webkit-scrollbar-track{
     background: rgba(0, 0, 0, 0.9);
 }
 ::-webkit-scrollbar-thumb{
-    backgroung: linear-gradient(to bottom, rgb(0, 62, 196), rgb(184, 0, 153));
+    background: linear-gradient(to bottom, rgb(0, 62, 196), rgb(184, 0, 153));
 }
