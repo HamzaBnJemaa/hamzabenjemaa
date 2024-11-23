@@ -7,7 +7,7 @@ const Tech = () => {
       <h1 className='text-4xl font-light text-white md:text-6xl'>Technologies</h1>
       <div className='flex flex-wrap items-center justify-center gap-10 p-5'>
         <div classname='cursor-pointer text-[80px] text-sky-500 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]'>
-  <BiLogoTypescript className=''/>
+  <BiLogoTypescript className='cursor-pointer text-[80px] text-sky-500 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]'/>
         </div>
       </div>
     </div>
