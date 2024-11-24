@@ -1,5 +1,5 @@
 import React from 'react'
-import { BiLogoDocker, BiLogoJavascript, BiLogoNodejs, BiLogoPostgresql, BiLogoTailwindCss, BiLogoTypescript } from 'react-icons/bi'
+import { BiLogoAdobe, BiLogoDocker, BiLogoFlutter, BiLogoJavascript, BiLogoMongodb, BiLogoNodejs, BiLogoPostgresql, BiLogoReact, BiLogoTailwindCss, BiLogoTypescript } from 'react-icons/bi'
 import { motion } from "framer-motion"
 const Tech = () => {
   const variants ={
@@ -38,7 +38,7 @@ initial="hidden"
 whileInView="visible"
 transition={{duration:0.5}}
 >
-  <BiLogoDocker className='cursor-pointer text-[80px] text-blue-600 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]'/>
+  <BiLogoFlutter className='cursor-pointer text-[80px] text-white transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]'/>
         </motion.div>
         <motion.div
         variants={variants}
@@ -62,9 +62,10 @@ initial="hidden"
 whileInView="visible"
 transition={{duration:0.5}}
 >
-  <BiLogoPostgresql className='cursor-pointer text-[80px] text-blue-500 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]'/>
+  <BiLogoReact className='cursor-pointer text-[80px] text-blue-400 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]'/>
         </motion.div>
       </div>
+      
     </div>
   )
 }
