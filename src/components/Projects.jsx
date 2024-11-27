@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 import image1 from '../assets/hamza.png';
-import image2 from '../assets/hamza2.jpg';
+import image2 from '../assets/codini.jpg';
 import image3 from '../assets/hamza4.png';
 import image4 from '../assets/hamza5.jpg';
 import image5 from '../assets/image.jpg';
