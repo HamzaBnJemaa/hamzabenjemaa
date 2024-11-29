@@ -78,6 +78,14 @@ initial="hidden"
 whileInView="visible"
 transition={{duration:0.5}}
 >
+<BiLogoDocker className='cursor-pointer text-[80px] text-sky-500 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]'/>
+        </motion.div>
+        <motion.div
+        variants={variants}
+initial="hidden"
+whileInView="visible"
+transition={{duration:0.5}}
+>
   <BiLogoReact className='cursor-pointer text-[80px] text-blue-400 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]'/>
         </motion.div>
         
