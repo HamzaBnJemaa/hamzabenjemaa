@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { BiMenu, BiX } from "react-icons/bi";
-import { BsGithub, BsLinkedin, BsTwitterX, BsYoutube } from "react-icons/bs"
+import { BiMenu, BiSolidCustomize, BiX } from "react-icons/bi";
+import { BsFacebook, BsFile, BsGithub, BsLinkedin, BsTwitterX, BsYoutube } from "react-icons/bs"
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuOpen = () => {
@@ -22,6 +22,9 @@ const NavBar = () => {
 <a href="#contact" className="cursor-pointer opacity-70 transition-all duration-300 hover-opacity-100">
   <li>Contact</li>
 </a>
+<a href="#contact" className="cursor-pointer opacity-70 transition-all duration-300 hover-opacity-100">
+  <li>Resume</li>
+</a>
       </ul>
       <ul className="hidden md:flex gap-5">
         <li className="cursor-pointer text-xl opacity-70 transiton-all duration-300 hover:text-red-500 hover:opacity-100">
@@ -35,6 +38,9 @@ const NavBar = () => {
         </li>
         <li className="cursor-pointer text-xl opacity-70 transiton-all duration-300 hover:text-orange-500 hover:opacity-100">
           <BsGithub/>
+        </li>
+        <li className="cursor-pointer text-xl opacity-70 transiton-all duration-300 hover:text-blue-500 hover:opacity-100">
+          <BsFacebook/>
         </li>
       </ul>
 
