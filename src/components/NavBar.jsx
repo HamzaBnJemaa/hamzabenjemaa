@@ -22,9 +22,10 @@ const NavBar = () => {
 <a href="#contact" className="cursor-pointer opacity-70 transition-all duration-300 hover-opacity-100">
   <li>Contact</li>
 </a>
-<a href="#contact" className="cursor-pointer opacity-70 transition-all duration-300 hover-opacity-100">
+<a href="#resume" className="cursor-pointer opacity-70 transition-all duration-300 hover-opacity-100">
   <li>Resume</li>
 </a>
+
       </ul>
       <ul className="hidden md:flex gap-5">
         <li className="cursor-pointer text-xl opacity-70 transiton-all duration-300 hover:text-red-500 hover:opacity-100">
