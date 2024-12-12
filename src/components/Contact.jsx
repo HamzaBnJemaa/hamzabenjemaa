@@ -11,7 +11,7 @@ const Contact = () => {
           Want to chat ? Send me an E-mail through this button and I'll respond
           whenever i can..
         </p>
-        <a href="mailto:benjemaahamza09@gmail.com" className='text-nowrap rounded-lg border border-indigo-600 bg-black px-5 py-3 text-lg font-bold text-white shadow-lg shadow-indigo-700 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-indigo-600'>Contact Me</a>
+        <a href="mailto:benjemaahamza09@gmail.com" className='mt-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300'>Contact Me</a>
       </div>
     </div>
   )
