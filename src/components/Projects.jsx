@@ -9,6 +9,12 @@ import { motion } from "framer-motion";
 const projectsData = [
   {
     image:image1,
+    title: "barcha talk",
+    description: "lorem ips lorem ipsum dorem ipsum dolor sit amet, consectetur adip incididunt ut labore et dolo lorem ipsum dolor sit amet, consectetur adip incididunt ut labore et dolor. lorem ipsum dolor sit amet, consectetur adip incididunt ut labore et dolo lorem ipsum dolor sit amet, consectetur adip incididunt ut labore et dolor.",
+    technologies: ["HTML", "CSS", "JavaScript","CSS", "MySQL"],
+  },
+  {
+    image:image1,
     title: "E-Book Store",
     description: "lorem ips lorem ipsum dorem ipsum dolor sit amet, consectetur adip incididunt ut labore et dolo lorem ipsum dolor sit amet, consectetur adip incididunt ut labore et dolor. lorem ipsum dolor sit amet, consectetur adip incididunt ut labore et dolo lorem ipsum dolor sit amet, consectetur adip incididunt ut labore et dolor.",
     technologies: ["HTML", "CSS", "JavaScript","CSS", "MySQL"],
