@@ -52,7 +52,7 @@ const NavBar = () => {
           </li>
         </a>
         <a href="https://github.com/HamzaBnJemaa" target="_blank" rel="noopener noreferrer">
-          <li className="cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-orange-500 hover:opacity-100">
+          <li className="cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-white hover:opacity-100">
             <BsGithub />
           </li>
         </a>
