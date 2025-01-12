@@ -71,7 +71,7 @@ const Footer = () => {
           <a href="#home" className="hover:text-white">
             Hamza Ben Jemaa
           </a>
-          . All Rights Reserved
+          . All Rights Reserved.
         </span>
       </div>
     </footer>
