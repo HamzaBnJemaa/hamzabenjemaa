@@ -8,7 +8,10 @@ const Contact = () => {
           <span className='bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-transparent'>Get In Touch</span>
         </h1>
         <p className='text-center text-lg font-semibold text-gray-500'>
-          Want to chat ? Send me an E-mail through this button and I'll respond
+          Want to chat , contact me ?
+        </p>
+        <p className='text-center text-lg font-semibold text-gray-500'>
+         Send me an E-mail through this button and I'll respond
           whenever i can..
         </p>
         <a href="mailto:benjemaahamza09@gmail.com" className='mt-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300'>Contact Me</a>
