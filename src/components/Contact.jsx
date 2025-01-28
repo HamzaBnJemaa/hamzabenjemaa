@@ -14,7 +14,7 @@ const Contact = () => {
          Send me an E-mail through this button and I'll respond
           whenever i can..
         </p>
-        <a href="mailto:benjemaahamza09@gmail.com" className='mt-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300'>Contact Me</a>
+        <a href="mailto:benjemaahamza09@gmail.com" className='bg-transparent border border-white hover:bg-white hover:text-black py-2 px-4 rounded-lg transition-all duration-300 mx-2'>Contact Me</a>
       </div>
     </div>
   )

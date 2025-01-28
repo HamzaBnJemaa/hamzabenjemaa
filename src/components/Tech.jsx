@@ -1,6 +1,7 @@
 import React from 'react'
 import { BiLogoAdobe, BiLogoBootstrap, BiLogoCss3, BiLogoDocker, BiLogoFirebase, BiLogoFlutter, BiLogoJavascript, BiLogoMongodb, BiLogoNodejs, BiLogoPostgresql, BiLogoReact, BiLogoTailwindCss, BiLogoTypescript } from 'react-icons/bi'
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
+
 const Tech = () => {
   const variants ={
     hidden:{opacity:0, y:50},

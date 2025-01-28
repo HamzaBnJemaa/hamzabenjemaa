@@ -9,9 +9,19 @@ const Hero = () => {
     hover: { scale: 1.05, transition: { duration: 0.15, ease: 'easeInOut' } },
   };
 
+  const titleVariants = {
+    initial: { y: -50, opacity: 0 },
+    animate: { y: 0, opacity: 1, transition: { duration: 0.8, delay: 0.4, ease: 'easeInOut' } },
+  };
+
+  const subtitleVariants = {
+    initial: { y: 50, opacity: 0 },
+    animate: { y: 0, opacity: 1, transition: { duration: 0.8, delay: 0.6, ease: 'easeInOut' } },
+  };
+
   const textVariants = {
     initial: { y: 50, opacity: 0 },
-    animate: { y: 0, opacity: 1, transition: { duration: 0.8, delay: 0.2, ease: 'easeInOut' } },
+    animate: { y: 0, opacity: 1, transition: { duration: 0.8, delay: 0.8, ease: 'easeInOut' } },
   };
 
   return (
@@ -22,11 +32,16 @@ const Hero = () => {
           initial="initial"
           animate="animate"
           whileHover="hover"
+          className="relative" 
         >
           <img
             src={image}
             alt=""
-            className="w-[300px] cursor-pointer rounded-full shadow-xl shadow-indigo-900 transition-all duration-300 md:w-[450px]"
+            className="w-[300px] cursor-pointer rounded-full transition-all duration-300 md:w-[450px]" 
+          />
+          {/* Optional: Add a subtle glow effect */}
+          <div 
+            className="absolute -top-2 -left-2 w-[102%] h-[102%] rounded-full bg-gradient-to-br from-blue-500 to-pink-500 opacity-10 blur-sm" 
           />
         </motion.div>
 
@@ -36,19 +51,34 @@ const Hero = () => {
           animate="animate"
           className="flex max-w-[700px] flex-col items-center justify-center gap-3 text-center"
         >
-          <h1 className="bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent text-5xl font-light md:text-7xl">
+          <motion.h1
+            variants={titleVariants}
+            initial="initial"
+            animate="animate"
+            className="bg-gradient-to-r from-slate-300 to-blue-500 bg-clip-text text-transparent text-5xl font-light md:text-7xl" 
+          >
             Hamza Ben Jemaa
-          </h1>
-          <h3 className="bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent text-5xl md:text-3xl">
+          </motion.h1>
+          <motion.h3
+            variants={subtitleVariants}
+            initial="initial"
+            animate="animate"
+            className="bg-gradient-to-r from-blue-500 to-slate-300 bg-clip-text text-transparent text-5xl md:text-3xl"
+          >
             Web Developer
-          </h3>
-          <p className="md:text-base text-sm text-gray-400">
-            Hi, I'm a Web & mobile Developer, skilled in ReactJs, Next.js, JavaScript,
-            React Native, Tailwind, focused on building clean, scalable applications.
-            From front-end design to seamless database integration with mySQL, I
-            create efficient solutions for dynamic user experiences. Let's build
+          </motion.h3>
+          <motion.p
+            variants={textVariants}
+            initial="initial"
+            animate="animate"
+            className="md:text-base text-sm text-gray-400"
+          >
+            Hi, I'm a Web Developer, skilled in ReactJs, Next.js, JavaScript, 
+            React Native, Tailwind, focused on building clean, scalable applications. 
+            From front-end design to seamless database integration with mySQL, I 
+            create efficient solutions for dynamic user experiences. Let's build 
             something Great for together!
-          </p>
+          </motion.p>
         </motion.div>
       </div>
     </div>

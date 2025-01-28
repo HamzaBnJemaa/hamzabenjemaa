@@ -1,39 +1,53 @@
-import { useState } from "react";
-import resumePDF from "../assets/Hamzadec2024.pdf";
+import React, { useState } from 'react';
+import resumePDF from '../assets/Hamzadec2024.pdf';
 
 const Resume = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isResumeVisible, setIsResumeVisible] = useState(false);
 
-  const handleShowResume = () => {
-    setIsVisible(true);
+  const handleViewResume = () => {
+    setIsResumeVisible(!isResumeVisible);
   };
 
   return (
     <section id="resume" className="min-h-screen w-full flex flex-col items-center justify-center text-white px-8 py-16">
       <h2 className="text-4xl font-bold mb-8">My Resume</h2>
 
-      {/* Resume iframe */}
-      <div
-        className={`w-full max-w-4xl h-[600px] border-2 border-gray-700 overflow-hidden transition-all duration-500 ${
-          isVisible ? "blur-0" : "blur-md opacity-50"
-        }`}
-      >
-        <iframe
-          src={resumePDF}
-          className="w-full h-full"
-          title="Resume PDF"
-        ></iframe>
-      </div>
+      {!isResumeVisible && (
+        <button 
+          className="bg-transparent border border-white hover:bg-white hover:text-black py-3 px-6 rounded-lg transition-all duration-300" 
+          onClick={handleViewResume}
+        >
+          View Resume
+        </button>
+      )}
 
-      {/* Download Button */}
-      <a
-        href={resumePDF}
-        download
-        onClick={handleShowResume}
-        className="mt-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300"
-      >
-        Download Resume
-      </a>
+      {isResumeVisible && (
+        <>
+          <div className="w-full max-w-4xl h-[600px] border-2 border-gray-700 overflow-hidden transition-all duration-500">
+            <iframe 
+              src={resumePDF} 
+              className="w-full h-full" 
+              title="Resume PDF" 
+            />
+          </div>
+          <div className="flex justify-center mt-4"> 
+            <a 
+              href={resumePDF} 
+              download 
+              className="bg-transparent border border-white hover:bg-white hover:text-black py-2 px-4 rounded-lg transition-all duration-300 mx-2"
+            >
+              Download PDF
+            </a>
+            <button 
+              className="bg-transparent border border-white hover:bg-white hover:text-black py-2 px-4 rounded-lg transition-all duration-300 mx-2" 
+              onClick={handleViewResume}
+            >
+              Hide Resume
+            </button>
+          </div>
+        </>
+      )}
+
     </section>
   );
 };

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BiMenu, BiX } from "react-icons/bi";
 import { BsFacebook, BsGithub, BsLinkedin, BsTwitterX, BsYoutube } from "react-icons/bs";
 
@@ -9,27 +9,38 @@ const NavBar = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setIsOpen(false); // Close menu on window resize to desktop
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []); 
+
   return (
-    <nav className="fixed top-0 z-10 flex w-full items-center justify-between border-b border-b-grey-700 bg-black/70 px-16 py-6 text-white backdrop-blur-md md:justify-evenly">
-      <a href="#home" className="bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent opacity-80 text-3xl font-semibold transition-all duration-300 hover:opacity-100">
+    <nav className="fixed top-0 z-10 flex w-full items-center justify-between bg-transparent px-16 py-6 text-white backdrop-blur-md md:justify-evenly"> 
+      <a href="#home" className="bg-gradient-to-r from-slate-300 to-blue-500 bg-clip-text text-transparent opacity-80 text-3xl font-semibold transition-all duration-300 hover:opacity-100"> 
         Hamza Ben Jemaa
       </a>
 
       {/* Main navigation links */}
       <ul className="hidden md:flex gap-10">
-        <a href="#home" className="cursor-pointer opacity-70 transition-all duration-300 hover-opacity-100">
+        <a href="#home" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
           <li>Home</li>
         </a>
-        <a href="#tech" className="cursor-pointer opacity-70 transition-all duration-300 hover-opacity-100">
+        <a href="#tech" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
           <li>Tech</li>
         </a>
-        <a href="#projects" className="cursor-pointer opacity-70 transition-all duration-300 hover-opacity-100">
+        <a href="#projects" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
           <li>Projects</li>
         </a>
-        <a href="#resume" className="cursor-pointer opacity-70 transition-all duration-300 hover-opacity-100">
+        <a href="#resume" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
           <li>Resume</li>
         </a>
-        <a href="#contact" className="cursor-pointer opacity-70 transition-all duration-300 hover-opacity-100">
+        <a href="#contact" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
           <li>Contact</li>
         </a>
       </ul>
