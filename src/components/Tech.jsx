@@ -1,5 +1,5 @@
 import React from 'react'
-import { BiLogoAdobe, BiLogoBootstrap, BiLogoDocker, BiLogoFirebase, BiLogoFlutter, BiLogoJavascript, BiLogoMongodb, BiLogoNodejs, BiLogoPostgresql, BiLogoReact, BiLogoTailwindCss, BiLogoTypescript } from 'react-icons/bi'
+import { BiLogoAdobe, BiLogoBootstrap, BiLogoCss3, BiLogoDocker, BiLogoFirebase, BiLogoFlutter, BiLogoJavascript, BiLogoMongodb, BiLogoNodejs, BiLogoPostgresql, BiLogoReact, BiLogoTailwindCss, BiLogoTypescript } from 'react-icons/bi'
 import { motion } from "framer-motion"
 const Tech = () => {
   const variants ={
@@ -46,6 +46,14 @@ initial="hidden"
 whileInView="visible"
 transition={{duration:0.5}}
 >
+<BiLogoCss3 className='cursor-pointer text-[80px] text-sky-600 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]'/>
+        </motion.div>
+        <motion.div
+        variants={variants}
+initial="hidden"
+whileInView="visible"
+transition={{duration:0.5}}
+>
   <BiLogoTailwindCss className='cursor-pointer text-[80px] text-sky-400 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]'/>
         </motion.div>
         <motion.div
@@ -79,6 +87,14 @@ whileInView="visible"
 transition={{duration:0.5}}
 >
 <BiLogoDocker className='cursor-pointer text-[80px] text-sky-500 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]'/>
+        </motion.div>
+        <motion.div
+        variants={variants}
+initial="hidden"
+whileInView="visible"
+transition={{duration:0.5}}
+>
+<BiLogoMongodb className='cursor-pointer text-[80px] text-green-500 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]'/>
         </motion.div>
         <motion.div
         variants={variants}
