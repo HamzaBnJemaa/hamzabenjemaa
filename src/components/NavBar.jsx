@@ -37,9 +37,6 @@ const NavBar = () => {
         <a href="#projects" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
           <li>Projects</li>
         </a>
-        <a href="#resume" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
-          <li>Resume</li>
-        </a>
         <a href="#contact" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
   <li>Contact</li>
 </a>
@@ -111,7 +108,7 @@ const NavBar = () => {
               </li>
             </a>
             <a href="https://x.com/HamzaBnjemaa" target="_blank" rel="noopener noreferrer">
-              <li className="cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-sky-500 hover:opacity-100">
+              <li className="cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-slate-500 hover:opacity-100">
                 <BsTwitterX />
               </li>
             </a>

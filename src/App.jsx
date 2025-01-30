@@ -4,7 +4,6 @@ import Contact from "./components/Contact";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 import Tech from "./components/Tech";
-import Resume from "./components/Resume";
 import Footer from "./components/Footer";
 
 function App() {
@@ -18,7 +17,6 @@ function App() {
         <Hero/>
         <Tech/>
         <Projects/>
-        <Resume/>
         <Contact/>
       </main>
       <Footer/>
