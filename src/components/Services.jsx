@@ -9,6 +9,16 @@ const Services = () => {
       icon: "/path/to/website-icon.svg", // Replace with your icon path
     },
     {
+        title: "Website Development",
+        description: "I create websites based on your ready-made design. Whether it's a landing page or a business card website. I will make it look great and work smoothly on any device.",
+        icon: "/path/to/website-icon.svg", // Replace with your icon path
+      },
+       {
+      title: "Website Development",
+      description: "I create websites based on your ready-made design. Whether it's a landing page or a business card website. I will make it look great and work smoothly on any device.",
+      icon: "/path/to/website-icon.svg", // Replace with your icon path
+    },
+    {
       title: "Web Design",
       description: "I can design your website from scratch. I create modern, simple, and user-friendly designs that match your brand and goals.",
       icon: "/path/to/design-icon.svg", // Replace with your icon path
@@ -38,21 +48,21 @@ const Services = () => {
         My Services
       </motion.h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-[1200px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 w-full max-w-[1200px]">
         {servicesData.map((service, index) => (
           <motion.div
             key={index}
             variants={fadeIn}
             initial="hidden"
             whileInView="visible"
-            className="bg-neutral-800 rounded-xl p-8 flex flex-col gap-6 transition duration-300 hover:scale-105"
+            className="bg-slate-600 bg-opacity-20 rounded-xl p-8 flex flex-col gap-6 shadow-lg hover:scale-105 transition duration-500 ease-in-out hover:shadow-2xl"
           >
             {/* Icon */}
-            <div className="flex justify-center"> {/* Center the icon */}
-              <img src={service.icon} alt={service.title} className="w-20 h-20 text-white" /> {/* Adjust size as needed */}
+            <div className="flex justify-center mb-4">
+              <img src={service.icon} alt={service.title} className="w-16 h-16 md:w-20 md:h-20 transition duration-300 transform hover:scale-110" />
             </div>
-            <h3 className="text-xl font-semibold text-white">{service.title}</h3>
-            <p className="text-gray-400">{service.description}</p>
+            <h3 className="text-xl font-semibold text-white text-center">{service.title}</h3>
+            <p className="text-gray-300 text-center">{service.description}</p>
           </motion.div>
         ))}
       </div>

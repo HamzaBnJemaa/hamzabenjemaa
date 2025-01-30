@@ -34,12 +34,16 @@ const NavBar = () => {
         <a href="#tech" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
           <li>Tech</li>
         </a>
+        <a href="#services" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
+          <li>Services</li>
+        </a>
         <a href="#projects" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
           <li>Projects</li>
         </a>
-        <a href="#contact" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
-  <li>Contact</li>
+         <a href="#contact-and-resume" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
+          <li>Contact</li>
 </a>
+
       </ul>
 
       {/* Social media icons */}
@@ -87,6 +91,9 @@ const NavBar = () => {
             </a>
             <a href="#tech" className="cursor-pointer opacity-70 transition-all duration-300 hover-opacity-100">
               <li>Tech</li>
+            </a>
+            <a href="#services" className="cursor-pointer opacity-70 transition-all duration-300 hover-opacity-100">
+              <li>Services</li>
             </a>
             <a href="#projects" className="cursor-pointer opacity-70 transition-all duration-300 hover-opacity-100">
               <li>Projects</li>
