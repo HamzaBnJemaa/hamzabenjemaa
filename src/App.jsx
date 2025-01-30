@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from "./components/NavBar";
 import Contact from "./components/Contact";
 import Hero from "./components/Hero";
+import Services  from "./components/Services";
 import Projects from "./components/Projects";
 import Tech from "./components/Tech";
 import Footer from "./components/Footer";
@@ -15,6 +16,7 @@ function App() {
       <main className="flex flex-col items-center px-4 md:px-8 lg:px-16">
         <NavBar/> 
         <Hero/>
+        <Services/> 
         <Tech/>
         <Projects/>
         <Contact/>

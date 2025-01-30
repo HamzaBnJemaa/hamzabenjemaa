@@ -12,7 +12,7 @@ const Contact = () => {
             <span className="bg-gradient-to-r from-slate-300 to-blue-500 bg-clip-text text-transparent">Get In Touch</span>
           </h1>
           <p className="text-center text-lg font-semibold text-gray-500">
-            Want to chat or contact me?
+          contact me?
           </p>
           <p className="text-center text-lg font-semibold text-gray-500">
             Send me an E-mail through this button and I'll respond whenever I can.

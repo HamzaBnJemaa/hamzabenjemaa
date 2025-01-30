@@ -1,64 +1,78 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
+import { BsFacebook, BsGithub, BsLinkedin, BsTwitter, BsTwitterX, BsX, BsYoutube } from "react-icons/bs";
+import image from "../assets/hamzat.png";
 
 const Footer = () => {
-  const socialVariants = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeInOut', delay: 0.3 } },
-  };
-
   return (
-    <footer className="w-full bg-black py-8 text-white">
-      <div className="max-w-[1200px] mx-auto px-8 flex justify-between items-center">
-        {/* Footer Text */}
-        <div className="text-center md:text-left">
-          <motion.p
-            variants={socialVariants}
-            initial="initial"
-            animate="animate"
-            className="text-sm text-gray-400"
+    <footer className="bg-transparent text-white shadow-lg">
+      <div className="w-full p-4 md:py-8">
+        <div className="flex flex-col items-center mb-6">
+          <a
+            href="#home"
+            className="flex flex-col items-center space-y-3"
           >
-            &copy; {new Date().getFullYear()} Hamza Ben Jemaa. All Rights Reserved.
-          </motion.p>
+            <img
+              src={image}
+              alt="Hamza Ben Jemaa Logo"
+              className="h-24 w-24 rounded-full shadow-lg"
+            />
+            <span className="self-center text-2xl font-semibold whitespace-nowrap">
+              Hamza Ben Jemaa
+            </span>
+          </a>
         </div>
-
-        {/* Social Media Icons */}
-        <div className="flex gap-6 justify-center items-center md:justify-end">
-          <motion.a
-            href="https://github.com/hamzajemaa"
+        <div className="flex justify-center space-x-6 mb-6">
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            aria-label="Facebook"
+            className="text-gray-400 hover:text-blue-500 transition"
+          >
+            <BsFacebook size={30} />
+          </a>
+          <a
+            href="https://github.com"
             target="_blank"
             rel="noopener noreferrer"
-            variants={socialVariants}
-            initial="initial"
-            animate="animate"
-            className="text-gray-400 hover:text-white transition-all duration-300"
+            aria-label="GitHub"
+            className="text-gray-400 hover:text-white transition"
           >
-            <FaGithub size={24} />
-          </motion.a>
-          <motion.a
-            href="https://www.linkedin.com/in/hamzajemaa/"
+            <BsGithub size={30} />
+          </a>
+          <a
+            href="https://linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
-            variants={socialVariants}
-            initial="initial"
-            animate="animate"
-            className="text-gray-400 hover:text-white transition-all duration-300"
+            aria-label="LinkedIn"
+            className="text-gray-400 hover:text-blue-600 transition"
           >
-            <FaLinkedinIn size={24} />
-          </motion.a>
-          <motion.a
-            href="https://twitter.com/hamzajemaa"
+            <BsLinkedin size={30} />
+          </a>
+          <a
+            href="https://twitter.com"
             target="_blank"
             rel="noopener noreferrer"
-            variants={socialVariants}
-            initial="initial"
-            animate="animate"
-            className="text-gray-400 hover:text-white transition-all duration-300"
+            aria-label="Twitter"
+            className="text-gray-400 hover:text-slate-200 transition"
           >
-            <FaTwitter size={24} />
-          </motion.a>
+            <BsTwitterX size={30} />
+          </a>
+          <a
+            href="https://youtube.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+            className="text-gray-400 hover:text-red-600 transition"
+          >
+            <BsYoutube size={30} />
+          </a>
         </div>
+        <span className="block text-sm text-gray-500 text-center">
+          © {new Date().getFullYear()}{" "}
+          <a href="#home" className="hover:text-white">
+            Hamza Ben Jemaa
+          </a>
+          . All Rights Reserved.
+        </span>
       </div>
     </footer>
   );
