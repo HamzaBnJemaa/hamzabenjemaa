@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { MdWeb, MdDesignServices } from "react-icons/md";
-import { FaLaptopCode, FaMobile, FaWordpress } from "react-icons/fa";
+import { FaLaptopCode, FaMobile} from "react-icons/fa";
 
 const Services = () => {
   const servicesData = [
@@ -47,7 +47,6 @@ const Services = () => {
       >
         My Services
       </motion.h1>
-
       {/* Service Cards */}
       <div className="flex flex-col gap-12 w-full max-w-[1200px]">
         {servicesData.map((service, index) => (
