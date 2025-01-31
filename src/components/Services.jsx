@@ -1,12 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { MdWeb, MdDesignServices } from "react-icons/md";
-import { FaLaptopCode, FaWordpress } from "react-icons/fa";
+import { FaLaptopCode, FaMobile, FaWordpress } from "react-icons/fa";
 
 const Services = () => {
   const servicesData = [
     {
-      title: "Website Development",
+      title: "Web Development",
       description:
         "I create websites based on your ready-made design. Whether it's a landing page or a business card website. I will make it look great and work smoothly on any device.",
       icon: <MdWeb className="text-white w-20 h-20" />,
@@ -24,10 +24,10 @@ const Services = () => {
       icon: <MdDesignServices className="text-white w-20 h-20" />,
     },
     {
-      title: "WordPress Development",
+      title: "mobile Development",
       description:
         "I specialize in building and customizing WordPress websites, from simple blogs to complex e-commerce platforms.",
-      icon: <FaWordpress className="text-white w-20 h-20" />,
+      icon: <FaMobile className="text-white w-20 h-20" />,
     },
   ];
 
@@ -49,19 +49,19 @@ const Services = () => {
       </motion.h1>
 
       {/* Service Cards */}
-      <div className="flex flex-col gap-12 w-full max-w-[1000px]">
+      <div className="flex flex-col gap-12 w-full max-w-[1200px]">
         {servicesData.map((service, index) => (
           <motion.div
             key={index}
             variants={fadeIn}
             initial="hidden"
             whileInView="visible"
-            className={`flex flex-col md:flex-row items-center gap-6 bg-slate-600 bg-opacity-20 rounded-xl p-8 shadow-lg hover:scale-105 transition duration-500 ease-in-out hover:shadow-2xl ${
+            className={`flex flex-col md:flex-row items-center gap-6 bg-transparent bg-opacity-0 rounded-xl p-8 ${
               index % 2 === 0 ? "md:flex-row-reverse" : ""
             }`}
           >
             {/* Icon Section */}
-            <div className="flex justify-center items-center p-6 rounded-full bg-gray-800">
+            <div className="flex justify-center items-center p-8 rounded-full bg-slate-700 ">
               {service.icon}
             </div>
 
