@@ -1,34 +1,34 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
+import { MdWeb, MdDesignServices } from "react-icons/md";
+import { FaLaptopCode, FaWordpress } from "react-icons/fa";
 
 const Services = () => {
   const servicesData = [
     {
       title: "Website Development",
-      description: "I create websites based on your ready-made design. Whether it's a landing page or a business card website. I will make it look great and work smoothly on any device.",
-      icon: "/path/to/website-icon.svg", // Replace with your icon path
+      description:
+        "I create websites based on your ready-made design. Whether it's a landing page or a business card website. I will make it look great and work smoothly on any device.",
+      icon: <MdWeb className="text-white w-20 h-20" />,
     },
     {
-        title: "Website Development",
-        description: "I create websites based on your ready-made design. Whether it's a landing page or a business card website. I will make it look great and work smoothly on any device.",
-        icon: "/path/to/website-icon.svg", // Replace with your icon path
-      },
-       {
-      title: "Website Development",
-      description: "I create websites based on your ready-made design. Whether it's a landing page or a business card website. I will make it look great and work smoothly on any device.",
-      icon: "/path/to/website-icon.svg", // Replace with your icon path
+      title: "Full-Stack Development",
+      description:
+        "Building dynamic web applications with modern frameworks. I handle both front-end and back-end development for scalable, high-performance solutions.",
+      icon: <FaLaptopCode className="text-white w-20 h-20" />,
     },
     {
       title: "Web Design",
-      description: "I can design your website from scratch. I create modern, simple, and user-friendly designs that match your brand and goals.",
-      icon: "/path/to/design-icon.svg", // Replace with your icon path
+      description:
+        "I can design your website from scratch. I create modern, simple, and user-friendly designs that match your brand and goals.",
+      icon: <MdDesignServices className="text-white w-20 h-20" />,
     },
     {
       title: "WordPress Development",
-      description: "I specialize in building and customizing WordPress websites, from simple blogs to complex e-commerce platforms.",
-      icon: "/path/to/wordpress-icon.svg", // Replace with your icon path
+      description:
+        "I specialize in building and customizing WordPress websites, from simple blogs to complex e-commerce platforms.",
+      icon: <FaWordpress className="text-white w-20 h-20" />,
     },
-    // Add more services here...
   ];
 
   const fadeIn = {
@@ -37,32 +37,39 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="flex min-h-screen w-full flex-col items-center justify-center gap-16 p-6 md:px-14 md:py-24">
+    <section id="services" className="flex flex-col items-center justify-center gap-16 p-6 md:px-14 md:py-24">
       <motion.h1
         variants={fadeIn}
         initial="hidden"
         whileInView="visible"
         transition={{ duration: 0.5 }}
-        className="text-4xl font-light text-white md:text-6xl"
+        className="text-4xl font-light text-white md:text-6xl text-center"
       >
         My Services
       </motion.h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 w-full max-w-[1200px]">
+      {/* Service Cards */}
+      <div className="flex flex-col gap-12 w-full max-w-[1000px]">
         {servicesData.map((service, index) => (
           <motion.div
             key={index}
             variants={fadeIn}
             initial="hidden"
             whileInView="visible"
-            className="bg-slate-600 bg-opacity-20 rounded-xl p-8 flex flex-col gap-6 shadow-lg hover:scale-105 transition duration-500 ease-in-out hover:shadow-2xl"
+            className={`flex flex-col md:flex-row items-center gap-6 bg-slate-600 bg-opacity-20 rounded-xl p-8 shadow-lg hover:scale-105 transition duration-500 ease-in-out hover:shadow-2xl ${
+              index % 2 === 0 ? "md:flex-row-reverse" : ""
+            }`}
           >
-            {/* Icon */}
-            <div className="flex justify-center mb-4">
-              <img src={service.icon} alt={service.title} className="w-16 h-16 md:w-20 md:h-20 transition duration-300 transform hover:scale-110" />
+            {/* Icon Section */}
+            <div className="flex justify-center items-center p-6 rounded-full bg-gray-800">
+              {service.icon}
             </div>
-            <h3 className="text-xl font-semibold text-white text-center">{service.title}</h3>
-            <p className="text-gray-300 text-center">{service.description}</p>
+
+            {/* Text Section */}
+            <div className="text-center md:text-left">
+              <h3 className="text-2xl font-semibold text-white">{service.title}</h3>
+              <p className="text-gray-300">{service.description}</p>
+            </div>
           </motion.div>
         ))}
       </div>

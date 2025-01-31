@@ -5,7 +5,6 @@ import Hero from "./components/Hero";
 import Services  from "./components/Services";
 import Projects from "./components/Projects";
 import Tech from "./components/Tech";
-import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -19,9 +18,9 @@ function App() {
         <Services/> 
         <Tech/>
         <Projects/>
-        <Contact/>
       </main>
-      <Footer/>
+      <Contact/>
+
     </>
   )
 }

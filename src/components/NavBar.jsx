@@ -18,11 +18,11 @@ const NavBar = () => {
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []); 
+  }, []);
 
   return (
-    <nav className="fixed top-0 z-10 flex w-full items-center justify-between bg-transparent px-16 py-6 text-white backdrop-blur-md md:justify-evenly"> 
-      <a href="#home" className="bg-gradient-to-r from-slate-300 to-blue-500 bg-clip-text text-transparent opacity-80 text-3xl font-semibold transition-all duration-300 hover:opacity-100"> 
+    <nav className="fixed top-0 z-10 flex w-full items-center justify-between bg-transparent px-16 py-6 text-white backdrop-blur-md md:justify-evenly">
+      <a href="#home" className="bg-gradient-to-r from-slate-300 to-blue-500 bg-clip-text text-transparent opacity-80 text-3xl font-semibold transition-all duration-300 hover:opacity-100">
         Hamza Ben Jemaa
       </a>
 
@@ -37,14 +37,12 @@ const NavBar = () => {
         <a href="#tech" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
           <li>Tech</li>
         </a>
-        
         <a href="#projects" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
           <li>Projects</li>
         </a>
-         <a href="#contact-and-resume" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
+        <a href="#contact-and-resume" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
           <li>Contact</li>
-</a>
-
+        </a>
       </ul>
 
       {/* Social media icons */}
@@ -77,34 +75,54 @@ const NavBar = () => {
       </ul>
 
       {/* Mobile menu toggle */}
-      {isOpen ? (
-        <BiX className="block md:hidden text-4xl" onClick={menuOpen} />
-      ) : (
-        <BiMenu className="block md:hidden text-4xl" onClick={menuOpen} />
-      )}
+      <div className="block md:hidden">
+        {isOpen ? (
+          <BiX
+            className="text-4xl cursor-pointer transition-all duration-300 hover:text-blue-500"
+            onClick={menuOpen}
+          />
+        ) : (
+          <BiMenu
+            className="text-4xl cursor-pointer transition-all duration-300 hover:text-blue-500"
+            onClick={menuOpen}
+          />
+        )}
+      </div>
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className={`fixed right-0 top-[84px] flex h-screen w-1/2 flex-col item-start justify-start gap-10 border-gray-800 bg-black/90 p-12`}>
-          <ul className="flex flex-col gap-8">
-            <a href="#home" className="cursor-pointer opacity-70 transition-all duration-300 hover-opacity-100">
+        <div
+          className={`fixed right-0 top-0 h-screen w-2/3 md:w-1/2 bg-black/90 backdrop-blur-lg border-l border-gray-800 shadow-2xl transition-all duration-300 ease-in-out`}
+        >
+          {/* Close button inside the mobile menu */}
+          <div className="flex justify-end p-6">
+            <BiX
+              className="text-4xl cursor-pointer transition-all duration-300 hover:text-blue-500"
+              onClick={menuOpen}
+            />
+          </div>
+
+          {/* Mobile menu links */}
+          <ul className="flex flex-col gap-8 p-12">
+            <a href="#home" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
               <li>Home</li>
             </a>
-            <a href="#services" className="cursor-pointer opacity-70 transition-all duration-300 hover-opacity-100">
+            <a href="#services" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
               <li>Services</li>
             </a>
-            <a href="#tech" className="cursor-pointer opacity-70 transition-all duration-300 hover-opacity-100">
+            <a href="#tech" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
               <li>Tech</li>
             </a>
-            <a href="#projects" className="cursor-pointer opacity-70 transition-all duration-300 hover-opacity-100">
+            <a href="#projects" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
               <li>Projects</li>
             </a>
-            <a href="#contact" className="cursor-pointer opacity-70 transition-all duration-300 hover-opacity-100">
+            <a href="#contact-and-resume" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
               <li>Contact Me</li>
             </a>
           </ul>
 
-          <ul className="flex flex-wrap gap-5">
+          {/* Social media icons in mobile menu */}
+          <ul className="flex flex-wrap gap-5 p-12">
             <a href="https://www.youtube.com/@hamzabnjemaa1258" target="_blank" rel="noopener noreferrer">
               <li className="cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-red-500 hover:opacity-100">
                 <BsYoutube />
@@ -116,12 +134,12 @@ const NavBar = () => {
               </li>
             </a>
             <a href="https://x.com/HamzaBnjemaa" target="_blank" rel="noopener noreferrer">
-              <li className="cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-slate-500 hover:opacity-100">
+              <li className="cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-sky-500 hover:opacity-100">
                 <BsTwitterX />
               </li>
             </a>
             <a href="https://github.com/HamzaBnJemaa" target="_blank" rel="noopener noreferrer">
-              <li className="cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-orange-500 hover:opacity-100">
+              <li className="cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-white hover:opacity-100">
                 <BsGithub />
               </li>
             </a>

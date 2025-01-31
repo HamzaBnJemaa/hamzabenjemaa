@@ -44,10 +44,6 @@ const Hero = () => {
             alt="Hamza"
             className="w-[300px] cursor-pointer rounded-full transition-all duration-300 md:w-[450px]"
           />
-          {/* Optional: Add a subtle glow effect */}
-          <div
-            className="absolute -top-2 -left-2 w-[102%] h-[102%] rounded-full bg-gradient-to-br from-blue-500 to-pink-500 opacity-10 blur-sm"
-          />
         </motion.div>
 
         {/* Text Animations */}
@@ -72,7 +68,7 @@ const Hero = () => {
             variants={subtitleVariants}
             initial="initial"
             animate="animate"
-            className="bg-gradient-to-r from-blue-500 to-slate-300 bg-clip-text text-transparent text-5xl md:text-3xl"
+            className="bg-gradient-to-r from-blue-500 to-slate-300 bg-clip-text text-transparent text-3xl md:text-5xl"
           >
             Web Developer
           </motion.h3>
@@ -82,14 +78,25 @@ const Hero = () => {
             variants={textVariants}
             initial="initial"
             animate="animate"
-            className="md:text-base text-sm text-gray-400"
+            className="text-base md:text-lg text-gray-400"
           >
             Hi, I'm a Web Developer, skilled in ReactJs, Next.js, JavaScript,
             React Native, Tailwind, focused on building clean, scalable applications.
             From front-end design to seamless database integration with mySQL, I
             create efficient solutions for dynamic user experiences. Let's build
-            something Great for together!
+            something great together!
           </motion.p>
+
+          {/* Call-to-Action Button */}
+          <motion.a
+            href="#projects"
+            variants={textVariants}
+            initial="initial"
+            animate="animate"
+            className="mt-6 px-8 py-3 bg-gradient-to-r from-blue-500 to-slate-500 text-white rounded-full text-lg font-semibold hover:from-blue-600 hover:to-slate-600 transition-all"
+          >
+            View Projects
+          </motion.a>
         </motion.div>
       </div>
     </div>
