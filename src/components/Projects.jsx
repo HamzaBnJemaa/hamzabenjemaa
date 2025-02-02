@@ -92,14 +92,28 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
-              {/* GitHub Logo Button */}
+              {/* GitHub Logo Button with Hover Effect */}
               <a
                 href={project.githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 flex items-center justify-center w-10 h-10 bg-gray-800 rounded-full hover:bg-gray-700 transition duration-300"
+                className="mt-4 flex items-center justify-center gap-2 w-fit px-4 py-2 bg-transparent border border-gray-600 rounded-full text-gray-300 hover:bg-slate-500/50 hover:text-white transition duration-300 group"
               >
-                <BsGithub className="text-white text-xl" />
+                {/* Animated GitHub Icon */}
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <BsGithub className="text-xl" />
+                </motion.div>
+                <motion.span
+  initial={{ opacity: 0, x: -10 }}
+  whileHover={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.3 }}
+  className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+>
+  View GitHub Repo!
+</motion.span>
               </a>
             </div>
           </motion.div>
