@@ -32,7 +32,7 @@ const projectsData = [
     title: "Social Media App",
     description: "A community-driven platform with features like user profiles, posts, likes, and comments.",
     technologies: ["TypeScript", "CSS", "JavaScript", "MySQL"],
-    githubLink: "https://github.com/yourusername/social-media-app", // Add GitHub link
+    githubLink: "https://github.com/yourusername/social-media-app", // Add GitHub link 
   },
   {
     image: image4,
