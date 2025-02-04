@@ -32,7 +32,7 @@ const projectsData = [
     title: "Social Media App",
     description: "A community-driven platform with features like user profiles, posts, likes, and comments.",
     technologies: ["TypeScript", "CSS", "JavaScript", "MySQL"],
-    githubLink: "https://github.com/yourusername/social-media-app", // Add GitHub link 
+    githubLink: "https://github.com/yourusername/social-media-app", // Add GitHub link
   },
   {
     image: image4,
@@ -81,12 +81,12 @@ const Projects = () => {
             />
             <div className="flex flex-col gap-5 text-white max-w-[500px]">
               <h3 className="text-xl font-semibold">{project.title}</h3>
-              <p className="text-gray-400">{project.description}</p>
+              <p className="text-slate-400">{project.description}</p>
               <div className="flex flex-wrap gap-3">
                 {project.technologies.map((tech, index) => (
                   <span 
                     key={index} 
-                    className="rounded-md border border-gray-600 px-4 py-2 text-sm text-gray-200 transition duration-300 hover:text-white hover:bg-white/20"
+                    className="rounded-md border border-gray-600 px-4 py-2 text-sm text-white-200 transition duration-300 hover:text-white hover:bg-slate-200/20"
                   >
                     {tech}
                   </span>
@@ -97,7 +97,7 @@ const Projects = () => {
                 href={project.githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 flex items-center justify-center gap-2 w-fit px-4 py-2 bg-transparent border border-gray-600 rounded-full text-gray-300 hover:bg-slate-500/50 hover:text-white transition duration-300 group"
+                className="mt-4 flex items-center justify-center gap-2 w-fit px-4 py-2 bg-transparent border border-slate-600 rounded-full text-white-300 hover:bg-slate-200/20 hover:text-white transition duration-800 group"
               >
                 {/* Animated GitHub Icon */}
                 <motion.div
@@ -106,14 +106,9 @@ const Projects = () => {
                 >
                   <BsGithub className="text-xl" />
                 </motion.div>
-                <motion.span
-  initial={{ opacity: 0, x: -10 }}
-  whileHover={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.3 }}
-  className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
->
-  View GitHub Repo!
-</motion.span>
+                <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  View GitHub Repo !
+                </span>
               </a>
             </div>
           </motion.div>
