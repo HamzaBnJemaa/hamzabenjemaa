@@ -1,9 +1,10 @@
-import image1 from '../assets/ebookstore.jpg';
-import image2 from '../assets/codini.jpg';
+import image1 from '../assets/bookilaptop.png';
+import image2 from '../assets/codinilaptop.png';
 import image3 from '../assets/hamza4.png';
-import image4 from '../assets/hamza5.jpg';
+import image4 from '../assets/laptophannibal.png';
 import { motion } from "framer-motion";
 import { BsGithub } from "react-icons/bs"; // Import GitHub icon
+import { FaTools } from "react-icons/fa"; // Import FaTools instead of BsTools
 
 const projectsData = [
   {
@@ -11,11 +12,18 @@ const projectsData = [
     title: "Barcha Talk",
     description: "A discussion platform where users can engage in meaningful conversations with real-time chat and topic-based discussions.",
     technologies: ["HTML", "CSS", "JavaScript", "MySQL"],
-    githubLink: "https://github.com/yourusername/barcha-talk", // Add GitHub link
+    githubLink: null, // No GitHub link (still in progress)
   },
   {
     image: image1,
-    title: "E-Book Store",
+    title: "Booky",
+    description: "An online bookstore with user authentication, book previews, and a rating system.",
+    technologies: ["HTML", "CSS", "JavaScript", "MySQL"],
+    githubLink: "https://github.com/yourusername/ebook-store", // Add GitHub link
+  },
+  {
+    image: image1,
+    title: "E-note App",
     description: "An online bookstore with user authentication, book previews, and a rating system.",
     technologies: ["HTML", "CSS", "JavaScript", "MySQL"],
     githubLink: "https://github.com/yourusername/ebook-store", // Add GitHub link
@@ -27,18 +35,18 @@ const projectsData = [
     technologies: ["JavaScript", "TypeScript", "Next.js", "Tailwind", "React Native", "MongoDB", "JWT"],
     githubLink: "https://github.com/yourusername/codini-platform", // Add GitHub link
   },
-  {
-    image: image3,
-    title: "Social Media App",
-    description: "A community-driven platform with features like user profiles, posts, likes, and comments.",
-    technologies: ["TypeScript", "CSS", "JavaScript", "MySQL"],
-    githubLink: "https://github.com/yourusername/social-media-app", // Add GitHub link
-  },
+  // {
+  //   image: image3,
+  //   title: "Social Media App",
+  //   description: "A community-driven platform with features like user profiles, posts, likes, and comments.",
+  //   technologies: ["TypeScript", "CSS", "JavaScript", "MySQL"],
+  //   githubLink: "https://github.com/yourusername/social-media-app", // Add GitHub link
+  // },
   {
     image: image4,
-    title: "E-Commerce Store",
-    description: "A full-fledged e-commerce store with secure payments, product management, and an intuitive shopping experience.",
-    technologies: ["HTML", "CSS", "JavaScript", "MySQL"],
+    title: "HANNIBAL Marketplace",
+    description: "Your Ultimate Shopping Destination! At HANNIBAL, we redefine the way you shop by providing a seamless and enjoyable online shopping experience. Dive into a world of endless choices, unbeatable prices, and unparalleled convenience right at your fingertips",
+    technologies: ["NEXT.JS", "Tailwind", "TypeScript", "Cloudinary"],
     githubLink: "https://github.com/yourusername/ecommerce-store", // Add GitHub link
   },
 ];
@@ -92,24 +100,35 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
-              {/* GitHub Logo Button with Hover Effect */}
-              <a
-                href={project.githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 flex items-center justify-center gap-2 w-fit px-4 py-2 bg-transparent border border-slate-600 rounded-full text-white-300 hover:bg-slate-200/20 hover:text-white transition duration-800 group"
-              >
-                {/* Animated GitHub Icon */}
-                <motion.div
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <BsGithub className="text-xl" />
-                </motion.div>
-                <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  View GitHub Repo !
-                </span>
-              </a>
+              {/* Conditional Rendering for GitHub Button or "Still on Work" Message */}
+              {project.githubLink ? (
+  <a
+    href={project.githubLink}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mt-4 flex items-center justify-center gap-2 w-fit px-4 py-2 bg-transparent border border-slate-600 rounded-full text-white-300 hover:bg-slate-200/20 hover:text-white transition duration-800 group"
+  >
+    {/* Animated GitHub Icon */}
+    <motion.div
+      whileHover={{ scale: 1.1 }}
+      transition={{ duration: 0.2 }}
+    >
+      <BsGithub className="text-xl" />
+    </motion.div>
+    <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      View GitHub Repo !
+    </span>
+  </a>
+) : (
+  <div className="mt-4 flex items-center justify-center gap-2 w-fit px-4 py-2 bg-transparent border border-red-600 rounded-full text-red-500 relative group">
+  <FaTools className="text-xl" /> {/* Use FaTools instead of BsTools */}
+  <span>Still on Work</span>
+  {/* Tooltip */}
+  <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-red-600 text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+    Under active development
+  </span>
+</div>
+)}
             </div>
           </motion.div>
         ))}
