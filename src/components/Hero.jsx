@@ -24,19 +24,25 @@ const Hero = () => {
   // Variants for title animation
   const titleVariants = {
     initial: { y: -50, opacity: 0 },
-    animate: { y: 0, opacity: 1, transition: { duration: 1, delay: 0.3, ease: 'easeInOut' } },
+    animate: { y: 0, opacity: 1, transition: { duration: 0.8, delay: 0.3, ease: 'easeInOut' } },
   };
 
   // Variants for subtitle animation
   const subtitleVariants = {
     initial: { y: 50, opacity: 0 },
-    animate: { y: 0, opacity: 1, transition: { duration: 1, delay: 0.6, ease: 'easeInOut' } },
+    animate: { y: 0, opacity: 1, transition: { duration: 0.8, delay: 0.6, ease: 'easeInOut' } },
   };
 
   // Variants for text paragraph animation
   const textVariants = {
     initial: { y: 50, opacity: 0 },
-    animate: { y: 0, opacity: 1, transition: { duration: 1, delay: 0.9, ease: 'easeInOut' } },
+    animate: { y: 0, opacity: 1, transition: { duration: 0.8, delay: 0.9, ease: 'easeInOut' } },
+  };
+
+  // Variants for button animation
+  const buttonVariants = {
+    initial: { y: 50, opacity: 0 },
+    animate: { y: 0, opacity: 1, transition: { duration: 0.8, delay: 1.2, ease: 'easeInOut' } },
   };
 
   return (
@@ -68,9 +74,6 @@ const Hero = () => {
 
           {/* Text Animations */}
           <motion.div
-            variants={textVariants}
-            initial="initial"
-            animate="animate"
             className="flex max-w-[700px] flex-col items-center justify-center gap-3 text-center"
           >
             {/* Title Animation */}
@@ -110,7 +113,7 @@ const Hero = () => {
             {/* Call-to-Action Button */}
             <motion.a
               href="#projects"
-              variants={textVariants}
+              variants={buttonVariants}
               initial="initial"
               animate="animate"
               className="mt-6 px-8 py-3 bg-gradient-to-r from-blue-500 to-slate-500 text-white rounded-full text-lg font-semibold hover:from-blue-600 hover:to-slate-600 transition-all"
