@@ -132,7 +132,7 @@ const Projects = () => {
                   <span>Soon</span>
                   {/* Tooltip */}
                   <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-yellow-600 text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    Coming soon!
+                    Coming soon !
                   </span>
                 </div>
               )}
