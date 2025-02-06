@@ -63,6 +63,14 @@ initial="hidden"
 whileInView="visible"
 transition={{duration:0.5}}
 >
+{/* <BiLogoCss5 className='cursor-pointer text-[80px] text-sky-400 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]'/>
+        </motion.div>
+        <motion.div
+        variants={variants}
+initial="hidden"
+whileInView="visible"
+transition={{duration:0.5}}
+> */}
   <BiLogoNodejs className='cursor-pointer text-[80px] text-green-400 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]'/>
         </motion.div>
         <motion.div
