@@ -108,6 +108,7 @@ const Hero = () => {
               From front-end design to seamless database integration with mySQL, I
               create efficient solutions for dynamic user experiences. Let's build
               something great together!
+              
             </motion.p>
 
             {/* Call-to-Action Button */}
