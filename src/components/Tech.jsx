@@ -17,9 +17,10 @@ import {
   BiLogoTailwindCss,
   BiLogoTypescript,
   BiLogoWordpress,
+  
 } from 'react-icons/bi';
 import { DiMysql } from 'react-icons/di'; // Import MySQL icon from Devicons
-
+import { SiNextdotjs } from 'react-icons/si';
 const Tech = () => {
   const variants = {
     hidden: { opacity: 0, y: 50 },
@@ -71,12 +72,17 @@ const Tech = () => {
           <BiLogoTailwindCss className='cursor-pointer text-[80px] text-sky-400 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
         </motion.div>
 
+
+        <motion.div variants={variants} initial='hidden' whileInView='visible' transition={{ duration: 0.5 }}>
+          <SiNextdotjs className='cursor-pointer text-[80px] text-white transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
+        </motion.div>
          
         <motion.div variants={variants} initial='hidden' whileInView='visible' transition={{ duration: 0.5 }}>
           <BiLogoNodejs className='cursor-pointer text-[80px] text-green-400 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
         </motion.div>
 
-         
+        
+
         <motion.div variants={variants} initial='hidden' whileInView='visible' transition={{ duration: 0.5 }}>
           <BiLogoGit className='cursor-pointer text-[80px] text-orange-600 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
         </motion.div>
