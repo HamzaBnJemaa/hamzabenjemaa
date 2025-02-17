@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import NProgress from "nprogress"; // Import nprogress
-import "nprogress/nprogress.css"; // Import nprogress styles
+import { useTranslation } from 'react-i18next'; // Import useTranslation hook
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
 import NavBar from "./components/NavBar";
 import Contact from "./components/Contact";
 import Hero from "./components/Hero";
@@ -12,6 +13,12 @@ import NotFound from "./components/NotFound";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
+  const { t, i18n } = useTranslation(); // Use the useTranslation hook
+
+  // Function to change language
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+  };
 
   useEffect(() => {
     const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
@@ -19,22 +26,20 @@ function App() {
     if (connection) {
       const { effectiveType, downlink } = connection;
 
-      // Show loading screen if network is slow
       if (effectiveType === "slow-2g" || effectiveType === "2g" || downlink < 1) {
         setIsLoading(true);
-        NProgress.start(); // Start progress bar
+        NProgress.start();
       }
     }
 
-    // Simulate page load delay (e.g., fetching data)
     const timer = setTimeout(() => {
-      setIsLoading(false); // Hide loading screen after page is loaded
-      NProgress.done(); // Stop progress bar
-    }, 3000); // Adjust the delay as needed
+      setIsLoading(false);
+      NProgress.done();
+    }, 3000);
 
     return () => {
-      clearTimeout(timer); // Cleanup timer
-      NProgress.done(); // Ensure progress bar is stopped
+      clearTimeout(timer);
+      NProgress.done();
     };
   }, []);
 
@@ -45,15 +50,18 @@ function App() {
         <div className="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] w-full h-full"></div>
       </div>
 
+      {/* Language Switcher */}
+      <div className="fixed top-4 right-4 z-50">
+        <button onClick={() => changeLanguage('en')} className="mr-2">EN</button>
+        <button onClick={() => changeLanguage('ar')} className="mr-2">AR</button>
+        <button onClick={() => changeLanguage('fr')}>FR</button>
+      </div>
+
       {/* Main Content */}
       <>
-        {/* NavBar (visible on all pages) */}
         <NavBar />
-
-        {/* Main Content with Routing */}
         <main className="flex flex-col items-center px-4 md:px-8 lg:px-16">
           <Routes>
-            {/* Home Page */}
             <Route
               path="/"
               element={
@@ -65,16 +73,10 @@ function App() {
                 </>
               }
             />
-
-            {/* Contact Page */}
             <Route path="/contact" element={<Contact />} />
-
-            {/* 404 Page (Catch-all Route) */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
-
-        {/* Contact Section */}
         <Contact />
       </>
     </Router>
