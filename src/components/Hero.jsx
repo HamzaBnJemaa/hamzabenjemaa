@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next'; // Import useTranslation hook
 import image from '../assets/hamzacos1.jpg';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const { t } = useTranslation(); // Use the useTranslation hook
 
   // Simulate image loading
   useEffect(() => {
@@ -85,7 +83,7 @@ const Hero = () => {
               animate="animate"
               className="bg-gradient-to-r from-slate-300 to-blue-500 bg-clip-text text-transparent text-5xl font-light md:text-7xl"
             >
-              {t('hero.title')} {/* Dynamic title */}
+              Hamza Ben Jemaa
             </motion.h1>
 
             {/* Subtitle Animation */}
@@ -95,7 +93,7 @@ const Hero = () => {
               animate="animate"
               className="bg-gradient-to-r from-blue-500 to-slate-300 bg-clip-text text-transparent text-3xl md:text-5xl"
             >
-              {t('hero.subtitle')} {/* Dynamic subtitle */}
+              Web Developer
             </motion.h3>
 
             {/* Paragraph Text Animation */}
@@ -105,7 +103,12 @@ const Hero = () => {
               animate="animate"
               className="text-base md:text-lg text-gray-400"
             >
-              {t('hero.description')} {/* Dynamic description */}
+              Hi, I'm a Web Developer, skilled in ReactJs, Next.js, JavaScript,
+              React Native, Tailwind, focused on building clean, scalable applications.
+              From front-end design to seamless database integration with mySQL, I
+              create efficient solutions for dynamic user experiences. Let's build
+              something great together!
+              
             </motion.p>
 
             {/* Call-to-Action Button */}
@@ -116,7 +119,7 @@ const Hero = () => {
               animate="animate"
               className="mt-6 px-8 py-3 bg-gradient-to-r from-blue-500 to-slate-500 text-white rounded-full text-lg font-semibold hover:from-blue-600 hover:to-slate-600 transition-all"
             >
-              {t('hero.button')} {/* Dynamic button text */}
+              View Projects
             </motion.a>
           </motion.div>
         </div>
