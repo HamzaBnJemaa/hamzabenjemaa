@@ -16,11 +16,11 @@ import {
   BiLogoReact,
   BiLogoTailwindCss,
   BiLogoTypescript,
-  BiLogoWordpress,
-  
+  BiLogoWordpress
 } from 'react-icons/bi';
-import { DiMysql } from 'react-icons/di'; // Import MySQL icon from Devicons
-import { SiNextdotjs } from 'react-icons/si';
+import { DiMysql } from 'react-icons/di';
+import { SiNextdotjs, SiAstro } from 'react-icons/si'; // Correct import for Astro
+
 const Tech = () => {
   const variants = {
     hidden: { opacity: 0, y: 50 },
@@ -40,74 +40,76 @@ const Tech = () => {
         Technologies
       </motion.h1>
 
-       
       <div className='flex flex-wrap items-center justify-center gap-10 p-5'>
-        
+        {/* TypeScript */}
         <motion.div variants={variants} initial='hidden' whileInView='visible' transition={{ duration: 0.5 }}>
           <BiLogoTypescript className='cursor-pointer text-[80px] text-sky-500 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
         </motion.div>
 
-         
+        {/* JavaScript */}
         <motion.div variants={variants} initial='hidden' whileInView='visible' transition={{ duration: 0.5 }}>
           <BiLogoJavascript className='cursor-pointer text-[80px] text-yellow-500 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
         </motion.div>
 
-        
+        {/* Flutter */}
         <motion.div variants={variants} initial='hidden' whileInView='visible' transition={{ duration: 0.5 }}>
-          <BiLogoFlutter className='cursor-pointer text-[80px] text-white transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
+          <BiLogoFlutter className='cursor-pointer text-[80px] text-blue-400 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
         </motion.div>
 
-         
+        {/* HTML5 */}
         <motion.div variants={variants} initial='hidden' whileInView='visible' transition={{ duration: 0.5 }}>
           <BiLogoHtml5 className='cursor-pointer text-[80px] text-orange-500 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
         </motion.div>
 
-        
+        {/* CSS3 */}
         <motion.div variants={variants} initial='hidden' whileInView='visible' transition={{ duration: 0.5 }}>
           <BiLogoCss3 className='cursor-pointer text-[80px] text-sky-600 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
         </motion.div>
 
-         
+        {/* Tailwind CSS */}
         <motion.div variants={variants} initial='hidden' whileInView='visible' transition={{ duration: 0.5 }}>
           <BiLogoTailwindCss className='cursor-pointer text-[80px] text-sky-400 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
         </motion.div>
 
-
+        {/* Next.js */}
         <motion.div variants={variants} initial='hidden' whileInView='visible' transition={{ duration: 0.5 }}>
           <SiNextdotjs className='cursor-pointer text-[80px] text-white transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
         </motion.div>
-         
+
+        {/* Node.js */}
         <motion.div variants={variants} initial='hidden' whileInView='visible' transition={{ duration: 0.5 }}>
           <BiLogoNodejs className='cursor-pointer text-[80px] text-green-400 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
         </motion.div>
 
-        
-
+        {/* Git */}
         <motion.div variants={variants} initial='hidden' whileInView='visible' transition={{ duration: 0.5 }}>
           <BiLogoGit className='cursor-pointer text-[80px] text-orange-600 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
         </motion.div>
 
-         
+        {/* Firebase */}
         <motion.div variants={variants} initial='hidden' whileInView='visible' transition={{ duration: 0.5 }}>
           <BiLogoFirebase className='cursor-pointer text-[80px] text-yellow-500 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
         </motion.div>
 
-         
+        {/* Bootstrap */}
         <motion.div variants={variants} initial='hidden' whileInView='visible' transition={{ duration: 0.5 }}>
           <BiLogoBootstrap className='cursor-pointer text-[80px] text-purple-500 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
         </motion.div>
 
-        
+        {/* MongoDB */}
         <motion.div variants={variants} initial='hidden' whileInView='visible' transition={{ duration: 0.5 }}>
           <BiLogoMongodb className='cursor-pointer text-[80px] text-green-500 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
         </motion.div>
 
-        
+        {/* React */}
         <motion.div variants={variants} initial='hidden' whileInView='visible' transition={{ duration: 0.5 }}>
           <BiLogoReact className='cursor-pointer text-[80px] text-blue-400 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
         </motion.div>
 
-        
+        <motion.div variants={variants} initial='hidden' whileInView='visible' transition={{ duration: 0.5 }}>
+          <SiAstro className='cursor-pointer text-[80px] text-white transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
+        </motion.div>
+
         <motion.div variants={variants} initial='hidden' whileInView='visible' transition={{ duration: 0.5 }}>
           <DiMysql className='cursor-pointer text-[80px] text-blue-600 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
         </motion.div>
