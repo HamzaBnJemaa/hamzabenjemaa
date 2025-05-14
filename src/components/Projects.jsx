@@ -3,12 +3,20 @@ import image2 from '../assets/codinilaptop.png';
 import image3 from '../assets/barchatalklaptop.png';
 import image4 from '../assets/laptophannibal.png';
 import image5 from '../assets/notelaptop.png';
+import image6 from '../assets/spring.png';
 import { motion } from "framer-motion";
 import { BsGithub } from "react-icons/bs"; // Import GitHub icon
 import { FaTools } from "react-icons/fa"; // Import FaTools for "Still on Work"
 import { FaClock } from "react-icons/fa"; // Import FaClock for "Soon"
 
 const projectsData = [
+  {
+    image: image6,
+    title: "Spring",
+    description: "An advanced e-shop with a smooth user experience and a wide selection of products.",
+    technologies: ["JavaScript", "TypeScript", "Next.js", "Tailwind", "React Native", "MongoDB", "JWT"],
+    status: "still-on-work", // "still-on-work", "github", or "soon"
+  },
   {
     image: image3,
     title: "Barcha Talk",
@@ -47,6 +55,7 @@ const projectsData = [
     status: "github", // "still-on-work", "github", or "soon"
     githubLink: "https://github.com/HANNIBAL-E-Commerce-WebSite/Hannibal-new-version.git", // Add GitHub link
   },
+  
 ];
 
 const fadeIn = {
