@@ -20,6 +20,8 @@ import {
 } from 'react-icons/bi';
 import { DiMysql } from 'react-icons/di';
 import { SiNextdotjs, SiAstro } from 'react-icons/si'; // Correct import for Astro
+import { SiLaravel } from 'react-icons/si';
+
 
 const Tech = () => {
   const variants = {
@@ -85,6 +87,9 @@ const Tech = () => {
         <motion.div variants={variants} initial='hidden' whileInView='visible' transition={{ duration: 0.5 }}>
           <BiLogoBootstrap className='cursor-pointer text-[80px] text-purple-500 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
         </motion.div>
+          <motion.div variants={variants} initial='hidden' whileInView='visible' transition={{ duration: 0.5 }}>
+  <SiLaravel className='cursor-pointer text-[80px] text-red-600 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[100px]' />
+</motion.div>
 
         <motion.div variants={variants} initial='hidden' whileInView='visible' transition={{ duration: 0.5 }}>
           <BiLogoMongodb className='cursor-pointer text-[80px] text-green-500 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
@@ -101,6 +106,7 @@ const Tech = () => {
         <motion.div variants={variants} initial='hidden' whileInView='visible' transition={{ duration: 0.5 }}>
           <DiMysql className='cursor-pointer text-[80px] text-blue-600 transition-all duration-300 hover:-translate-y-5 sm:text-[100px] md:text-[120px]' />
         </motion.div>
+      
       </div>
     </div>
   );
