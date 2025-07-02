@@ -4,12 +4,20 @@ import image3 from '../assets/barchatalklaptop.png';
 import image4 from '../assets/laptophannibal.png';
 import image5 from '../assets/notelaptop.png';
 import image6 from '../assets/spring.png';
+import image7 from '../assets/taniiit.png';
 import { motion } from "framer-motion";
 import { BsGithub } from "react-icons/bs"; // Import GitHub icon
 import { FaTools } from "react-icons/fa"; // Import FaTools for "Still on Work"
 import { FaClock } from "react-icons/fa"; // Import FaClock for "Soon"
 
 const projectsData = [
+  {
+    image: image7,
+    title: "Tanit V-1",
+   description: "An Tunisian chatbot-ai with a smooth user experience and a wide selection of products.",
+   technologies: ["JavaScript", "TypeScript", "Next.js", "Tailwind", "React Native", "MongoDB", "JWT"],
+ status: "still-on-work", 
+  },
   {
     image: image6,
     title: "Spring",

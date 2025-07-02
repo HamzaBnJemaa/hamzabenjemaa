@@ -8,6 +8,7 @@ import Hero from "./components/Hero";
 import Services from "./components/Services";
 import Projects from "./components/Projects";
 import Tech from "./components/Tech";
+import Certifications from "./components/Certifications";
 import NotFound from "./components/NotFound";
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
                   <Services />
                   <Tech />
                   <Projects />
+                  <Certifications />
                 </>
               }
             />
