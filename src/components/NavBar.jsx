@@ -6,29 +6,22 @@ import { motion, AnimatePresence } from "framer-motion";
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const menuOpen = () => {
-    setIsOpen(!isOpen);
-  };
+  const menuOpen = () => setIsOpen(!isOpen);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 768) {
-        setIsOpen(false); // Close menu on window resize to desktop
-      }
+      if (window.innerWidth > 768) setIsOpen(false);
     };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Animation variants for the mobile menu
   const mobileMenuVariants = {
     hidden: { x: "100%", opacity: 0 },
-    visible: { x: 0, opacity: 1, transition: { duration: 0.3, ease: "easeInOut" } },
+    visible: { x: 0, opacity: 1, transition: { duration: 0.4, ease: "easeInOut" } },
     exit: { x: "100%", opacity: 0, transition: { duration: 0.3, ease: "easeInOut" } },
   };
 
-  // Animation variants for social media icons
   const socialIconVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
@@ -40,26 +33,23 @@ const NavBar = () => {
         Hamza Ben Jemaa
       </a>
 
-      {/* Main navigation links */}
+      {/* Main navigation links with underline hover */}
       <ul className="hidden md:flex gap-10">
-        <a href="#home" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
-          <li>Home</li>
-        </a>
-        <a href="#services" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
-          <li>Services</li>
-        </a>
-        <a href="#tech" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
-          <li>Tech</li>
-        </a>
-        <a href="#projects" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
-          <li>Projects</li>
-        </a>
-        <a href="#certifications" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
-          <li>Certifs & intrenship</li>
-        </a>
-        <a href="#contact-and-resume" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
-          <li>Contact</li>
-        </a>
+        {[
+          { label: "Home", href: "#home" },
+          { label: "Services", href: "#services" },
+          { label: "Tech", href: "#tech" },
+          { label: "Projects", href: "#projects" },
+          { label: "Certifs & Internship", href: "#certifications" },
+          { label: "Contact", href: "#contact-and-resume" },
+        ].map(({ label, href }) => (
+          <li key={href} className="relative group cursor-pointer">
+            <a href={href} className="opacity-70 transition-all duration-300 hover:opacity-100">
+              {label}
+            </a>
+            <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-blue-500 transition-all group-hover:w-full"></span>
+          </li>
+        ))}
       </ul>
 
       {/* Social media icons */}
@@ -94,19 +84,13 @@ const NavBar = () => {
       {/* Mobile menu toggle */}
       <div className="block md:hidden">
         {isOpen ? (
-          <BiX
-            className="text-4xl cursor-pointer transition-all duration-300 hover:text-blue-500"
-            onClick={menuOpen}
-          />
+          <BiX className="text-4xl cursor-pointer transition-all duration-300 hover:text-blue-500" onClick={menuOpen} />
         ) : (
-          <BiMenu
-            className="text-4xl cursor-pointer transition-all duration-300 hover:text-blue-500"
-            onClick={menuOpen}
-          />
+          <BiMenu className="text-4xl cursor-pointer transition-all duration-300 hover:text-blue-500" onClick={menuOpen} />
         )}
       </div>
 
-      {/* Mobile menu with animations */}
+      {/* Upgraded Mobile menu with animations */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -115,70 +99,49 @@ const NavBar = () => {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className={`fixed right-0 top-0 h-screen w-2/3 md:w-1/2 bg-black/90 backdrop-blur-lg border-l border-gray-800 shadow-2xl`}
+            className="fixed right-0 top-0 h-screen w-2/3 md:w-1/2 bg-black/90 backdrop-blur-lg border-l border-gray-800 shadow-2xl flex flex-col items-center justify-center p-12 gap-12"
           >
-            {/* Close button inside the mobile menu */}
-            <div className="flex justify-end p-6">
-              <BiX
-                className="text-4xl cursor-pointer transition-all duration-300 hover:text-blue-500"
-                onClick={menuOpen}
-              />
-            </div>
-
             {/* Mobile menu links */}
-            <ul className="flex flex-col gap-8 p-12">
-              <a href="#home" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
-                <li>Home</li>
-              </a>
-              <a href="#services" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
-                <li>Services</li>
-              </a>
-              <a href="#tech" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
-                <li>Tech</li>
-              </a>
-              <a href="#projects" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
-                <li>Projects</li>
-              </a>
-              <a href="#contact-and-resume" className="cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100">
-                <li>Contact Me</li>
-              </a>
+            <ul className="flex flex-col items-center gap-8 text-xl">
+              {[
+                { label: "Home", href: "#home" },
+                { label: "Services", href: "#services" },
+                { label: "Tech", href: "#tech" },
+                { label: "Projects", href: "#projects" },
+                { label: "Contact Me", href: "#contact-and-resume" },
+              ].map(({ label, href }) => (
+                <li key={href} className="relative group">
+                  <a href={href} onClick={() => setIsOpen(false)} className="opacity-70 transition-all duration-300 hover:opacity-100">
+                    {label}
+                  </a>
+                  <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-blue-500 transition-all group-hover:w-full"></span>
+                </li>
+              ))}
             </ul>
 
             {/* Social media icons in mobile menu */}
-            <motion.div
-              className="p-12 "
-              initial="hidden"
-              animate="visible"
-              transition={{ staggerChildren: 0.1 }}
-            >
-              <motion.ul className="flex flex-wrap gap-5">
-                {[
-                  { icon: <BsYoutube />, color: "red", link: "https://www.youtube.com/@hamzabnjemaa1258", tooltip: "YouTube" },
-                  { icon: <BsLinkedin />, color: "blue", link: "https://www.linkedin.com/in/hamza-ben-jemaa-36746b2a9/", tooltip: "LinkedIn" },
-                  { icon: <BsTwitterX />, color: "sky", link: "https://x.com/HamzaBnjemaa", tooltip: "Twitter" },
-                  { icon: <BsGithub />, color: "white", link: "https://github.com/HamzaBnJemaa", tooltip: "GitHub" },
-                  { icon: <BsFacebook />, color: "blue", link: "https://www.facebook.com/hamzabnjemaa17/", tooltip: "Facebook" },
-                ].map((social, index) => (
-                  <motion.li
-                    key={index}
-                    variants={socialIconVariants}
-                    whileHover={{ scale: 1.1 }}
-                    className="relative group"
-                  >
-                    <a
-                      href={social.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-${social.color}-500 hover:opacity-100`}
-                    >
-                      {social.icon}
-                      {/* Tooltip */}
-                      
-                    </a>
-                  </motion.li>
-                ))}
-              </motion.ul>
-            </motion.div>
+            <motion.ul className="flex gap-6 mt-8">
+              {[
+                { icon: <BsYoutube />, color: "red", link: "https://www.youtube.com/@hamzabnjemaa1258" },
+                { icon: <BsLinkedin />, color: "blue", link: "https://www.linkedin.com/in/hamza-ben-jemaa-36746b2a9/" },
+                { icon: <BsTwitterX />, color: "sky", link: "https://x.com/HamzaBnjemaa" },
+                { icon: <BsGithub />, color: "white", link: "https://github.com/HamzaBnJemaa" },
+                { icon: <BsFacebook />, color: "blue", link: "https://www.facebook.com/hamzabnjemaa17/" },
+              ].map((social, index) => (
+                <motion.li
+                  key={index}
+                  variants={socialIconVariants}
+                  initial="hidden"
+                  animate="visible"
+                  whileHover={{ scale: 1.2 }}
+                  className="cursor-pointer text-2xl opacity-70 hover:opacity-100 transition"
+                >
+                  <a href={social.link} target="_blank" rel="noopener noreferrer" className={`hover:text-${social.color}-500`}>
+                    {social.icon}
+                  </a>
+                </motion.li>
+              ))}
+            </motion.ul>
           </motion.div>
         )}
       </AnimatePresence>
